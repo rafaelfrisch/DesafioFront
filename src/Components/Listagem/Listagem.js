@@ -1,10 +1,17 @@
 import React from 'react';
+import CardLivro from './Card';
 
 const Listagem = (props) => {
 
     return (
         <div>
-            <h1>Lista Livros</h1>
+        {props.books.map((book, index) =>{
+            return <CardLivro
+            key={index} 
+            volumeInfo={book.volumeInfo}
+            />
+        }
+        )}
         </div>
     );
 }
