@@ -8,7 +8,7 @@ const CardLivro = (props) => {
     const BookDetailsRedirect = (idLivro) => {
         console.log(idLivro)
         console.log(typeof(idLivro))
-        history.push(`/livros/${idLivro}`)
+        history.push(`/livros/${props.search}/${idLivro}`)
     }
 
     let image;

@@ -7,8 +7,8 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={ScreensHome} />
-      <Route exact path="/listagem" component={ScreensListagem} />
-      <Route exact path="/livros/:livroId" component={ScreensDetalhesLivro} />
+      <Route exact path="/listagem/:search" component={ScreensListagem} />
+      <Route exact path="/livros/:search/:livroId" component={ScreensDetalhesLivro} />
     </Switch>
   </BrowserRouter>
 );

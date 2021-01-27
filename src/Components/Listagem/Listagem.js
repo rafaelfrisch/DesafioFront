@@ -11,6 +11,7 @@ const Listagem = (props) => {
             key={index} 
             volumeInfo={book.volumeInfo}
             id={book.id}
+            search={props.search}
             />
         }
         )}

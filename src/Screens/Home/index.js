@@ -14,8 +14,8 @@ class ScreensHome extends Component{
     }
 
     SearchBook = () => {
-        let queryString = "book="+this.state.booksearch
-        this.props.history.push(`/listagem?${queryString}`)
+        let queryString = this.state.booksearch
+        this.props.history.push(`/listagem/${queryString}`)
     }
 
     render(){

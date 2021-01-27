@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Listagem from '../../Components/Listagem/Listagem'
-import queryString from 'query-string';
 import axios from 'axios';
 import Header from '../../Components/Header/Header';
 
@@ -8,13 +7,12 @@ import Header from '../../Components/Header/Header';
 class ScreensListagem extends Component{
 
     state = {
-        'bookSearched': '',
-        'booksList': [],
+        bookSearched: '',
+        booksList: [],
     }
 
     componentDidMount = () => {
-        const params = queryString.parse(this.props.location.search)
-        const bookSearched = params.book
+        const bookSearched = this.props.match.params.search
         this.setState({bookSearched: bookSearched})
         if(bookSearched){
             axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}`)
@@ -36,7 +34,7 @@ class ScreensListagem extends Component{
         return(
             <div>
                 <Header search={this.state.bookSearched}/>
-                <Listagem books={this.state.booksList}/>
+                <Listagem search={this.state.bookSearched} books={this.state.booksList}/>
             </div>
         )
     }
