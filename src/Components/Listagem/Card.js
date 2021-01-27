@@ -19,10 +19,10 @@ const CardLivro = (props) => {
         image = <img src={props.volumeInfo.imageLinks.thumbnail} alt={props.volumeInfo.title}/>
     
     return (
-        <div>
-            {image}
-            <h2>{props.volumeInfo.title}</h2>
-            <button onClick={() => {BookDetailsRedirect(props.id)}}>Mais detalhes</button>
+        <div className="image">
+            <a onClick={() => {BookDetailsRedirect(props.id)}} >
+                {image}
+            </a>
         </div>
     );
 }
