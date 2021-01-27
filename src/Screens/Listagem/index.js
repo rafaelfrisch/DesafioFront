@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Listagem from '../../Components/Listagem/Listagem'
 import queryString from 'query-string';
 import axios from 'axios';
+import Header from '../../Components/Header/Header';
+
 
 class ScreensListagem extends Component{
 
@@ -33,7 +35,7 @@ class ScreensListagem extends Component{
     render(){
         return(
             <div>
-                <h1>{this.state.bookSearched}</h1>
+                <Header search={this.state.bookSearched}/>
                 <Listagem books={this.state.booksList}/>
             </div>
         )
