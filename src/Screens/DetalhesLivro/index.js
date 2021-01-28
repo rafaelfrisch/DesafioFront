@@ -14,7 +14,6 @@ class ScreensDetalhesLivro extends Component{
         image: '',
         price: '',
         favorite: false,
-        stars: 3,
     }
 
     componentDidMount = () =>{
@@ -53,7 +52,6 @@ class ScreensDetalhesLivro extends Component{
                 <DetalhesLivro 
                     title={this.state.title} authors={this.state.authors} description={this.state.description}
                     pages={this.state.pages} image={this.state.image} price={this.state.price} favorite={this.state.favorite}
-                    stars={this.state.stars}
                     AddFavorite={this.AddFavorite}
                 />
             </div>
