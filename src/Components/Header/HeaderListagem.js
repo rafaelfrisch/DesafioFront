@@ -5,10 +5,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import './Header.css';
+import MenuComponent from './Menu';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -71,10 +70,11 @@ const SearchAppBar = (props) => {
     let menu = <ArrowBackIcon className="home-icon"/>
 
     if(props.showmenu)
-        menu = <MenuIcon />
+        menu = <MenuComponent/>
 
     return (
         <div className={classes.root}>
+        
         <AppBar position="static" style={{backgroundColor: "#f9dd08", color: 'black'}}>
             <Toolbar>
             <IconButton
