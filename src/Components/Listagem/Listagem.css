@@ -4,6 +4,7 @@
     grid-template-rows: 20% 20% 20% 20% 20%;
     justify-items: center;
     align-items: center;
+    background-color: #f9dd08;
 }
 .image {
     width: 50%;

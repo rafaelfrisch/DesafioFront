@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import Listagem from '../../Components/Listagem/Listagem'
 import axios from 'axios';
 import Header from '../../Components/Header/Header';
-
+import HeaderListagem from '../../Components/Header/HeaderListagem';
 
 class ScreensListagem extends Component{
 
     state = {
         bookSearched: '',
         booksList: [],
-        startindex: 0
+        startindex: 0,
+        newbookSearch: '',
     }
 
     componentDidMount = () => {
@@ -45,10 +46,19 @@ class ScreensListagem extends Component{
         })
     }
 
+    ChangeSearch = (event) => {
+        this.setState({newbookSearch: event.target.value})
+    }
+
+    HandleSubmit = (event) =>{
+        const newSearch = this.state.newbookSearch
+        this.props.history.push(`/listagem/${newSearch}`)
+    }
+
     render(){
         return(
             <div>
-                <Header search={this.state.bookSearched}/>
+                <HeaderListagem search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit}/>
                 <Listagem search={this.state.bookSearched} books={this.state.booksList}/>
                 <button onClick={this.searchMore}>Show more</button>
             </div>
