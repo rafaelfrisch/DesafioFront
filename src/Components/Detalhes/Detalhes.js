@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import StarIcon from '@material-ui/icons/Star';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+import Button from '@material-ui/core/Button';
 import Star from './Stars';
+import './Detalhes.css';
 
 class DetalhesLivro extends Component{
     state = {
@@ -25,35 +25,50 @@ class DetalhesLivro extends Component{
 
     render(){
         
-    let favorite = <FavoriteBorderIcon onClick={this.props.AddFavorite}/>;
+    let favorite = <FavoriteBorderIcon className="favorite-button" onClick={this.props.AddFavorite}/>;
     
     if (this.props.favorite)
-        favorite = <FavoriteIcon onClick={this.props.AddFavorite}/>
+        favorite = <FavoriteIcon className="favorite-button" onClick={this.props.AddFavorite}/>
     
         return(
         <div>
-            <div>
-                <h1>{this.props.title}</h1>
-                <img src={this.props.image} alt={this.props.title}/>
-                <h1>By {this.props.authors}</h1>
-                <h1>$ {this.props.price}</h1>
-                <h1>{this.props.pages} pages</h1>
-                <button>Buy</button>
-                {favorite}
+            <div className="details">
+                <div className="details-container">
+                    <div className="sub-details-container">
+                        <img src={this.props.image} alt={this.props.title} className="book-image"/>
+                        <h2 className="sub-title">{this.props.pages} pages</h2>
+                    </div>
+                    <div className="sub-details-container">
+                        <h1 className="book-title">{this.props.title}</h1>
+                        <h2 className="sub-title">By {this.props.authors}</h2>
+                        <div className="price-rating-container">
+                            <h1 className="price">$ {this.props.price}</h1>
+                            <div className="flex-container-star">
+                                {
+                                    [1, 2, 3, 4, 5].map((index)=>{
+                                        return(<Star
+                                            index={index}
+                                            hoverRating={this.state.hoverRating}
+                                            rating={this.state.rating}
+                                            onMouseEnter={this.onMouseEnter} 
+                                            onMouseLeave={this.onMouseLeave} 
+                                            onSaveRating={this.onSaveRating}
+                                        />)  
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <div className="buy-favorite-buttons">
+                            <Button variant="contained" color="primary" className="buy-button" size="large">
+                                Buy
+                            </Button>
+                            {favorite}
+                        </div>
+                    </div>
+                </div>
             </div>
-            {
-                [1, 2, 3, 4, 5].map((index)=>{
-                    return(<Star
-                        index={index}
-                        hoverRating={this.state.hoverRating}
-                        rating={this.state.rating}
-                        onMouseEnter={this.onMouseEnter} 
-                        onMouseLeave={this.onMouseLeave} 
-                        onSaveRating={this.onSaveRating}
-                    />)  
-                })
-            }
-            <h1>{this.props.description}</h1>
+            
+            <p className="description">{this.props.description}</p>
         </div>
         )
     }
