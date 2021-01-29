@@ -55,10 +55,14 @@ class ScreensListagem extends Component{
         this.props.history.push(`/listagem/${newSearch}`)
     }
 
+    MenuClicked = () =>{
+        console.log('ok')
+    }
+
     render(){
         return(
             <div>
-                <HeaderListagem search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit}/>
+                <HeaderListagem search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={true} menuOrArrowClicked={this.MenuClicked}/>
                 <Listagem search={this.state.bookSearched} books={this.state.booksList}/>
                 <button onClick={this.searchMore}>Show more</button>
             </div>

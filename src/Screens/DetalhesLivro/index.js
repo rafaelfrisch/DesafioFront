@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DetalhesLivro from '../../Components/Detalhes/Detalhes'
 import axios from 'axios';
-import Header from '../../Components/Header/Header';
+import HeaderListagem from '../../Components/Header/HeaderListagem';
 
 class ScreensDetalhesLivro extends Component{
 
@@ -43,12 +43,24 @@ class ScreensDetalhesLivro extends Component{
         this.setState({favorite: !this.state.favorite})
     }
 
+    ChangeSearch = (event) => {
+        this.setState({newbookSearch: event.target.value})
+    }
 
+    HandleSubmit = (event) =>{
+        const newSearch = this.state.newbookSearch
+        this.props.history.push(`/listagem/${newSearch}`)
+    }
+
+    ArrowClicked = (event) =>{
+        const bookSearched = this.state.bookSearched
+        this.props.history.push(`/listagem/${bookSearched}`)
+    }
     
     render(){
         return(
             <div>
-                <Header search={this.state.bookSearched}/>
+                <HeaderListagem search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={false} menuOrArrowClicked={this.ArrowClicked}/>
                 <DetalhesLivro 
                     title={this.state.title} authors={this.state.authors} description={this.state.description}
                     pages={this.state.pages} image={this.state.image} price={this.state.price} favorite={this.state.favorite}

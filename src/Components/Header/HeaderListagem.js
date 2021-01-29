@@ -7,7 +7,8 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import './Header.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,44 +66,50 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchAppBar = (props) => {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor: "#f9dd08", color: 'black'}}>
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h5" noWrap>
-            {props.search}
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+    let menu = <ArrowBackIcon className="home-icon"/>
+
+    if(props.showmenu)
+        menu = <MenuIcon />
+
+    return (
+        <div className={classes.root}>
+        <AppBar position="static" style={{backgroundColor: "#f9dd08", color: 'black'}}>
+            <Toolbar>
+            <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="open drawer"
+                onClick={props.menuOrArrowClicked}
+            >
+                {menu}
+            </IconButton>
+            <Typography className={classes.title} variant="h5" noWrap>
+                {props.search}
+            </Typography>
+            <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                <SearchIcon />
+                </div>
+                <form onSubmit={props.submit}>
+                    <InputBase
+                    placeholder="Search…"
+                    classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput,
+                    }}
+                    inputProps={{ 'aria-label': 'search' }}
+                    onChange={props.changeSearch}
+                    
+                    />
+                </form>
             </div>
-            <form onSubmit={props.submit}>
-                <InputBase
-                placeholder="Search…"
-                classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-                onChange={props.changeSearch}
-                
-                />
-            </form>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+            </Toolbar>
+        </AppBar>
+        </div>
+    );
 }
 
 export default SearchAppBar;
