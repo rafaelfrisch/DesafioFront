@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Listagem from '../../Components/Listagem/Listagem'
 import axios from 'axios';
-import Header from '../../Components/Header/HeaderListagem';
+import Header from '../../Components/Header/Header';
 import Button from '@material-ui/core/Button';
 import './styles.css'
 

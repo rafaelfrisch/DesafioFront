@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DetalhesLivro from '../../Components/Detalhes/Detalhes'
 import axios from 'axios';
-import Header from '../../Components/Header/HeaderListagem';
+import Header from '../../Components/Header/Header';
 
 class ScreensDetalhesLivro extends Component{
 
