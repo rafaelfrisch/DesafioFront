@@ -10,7 +10,7 @@ class ScreensListagem extends Component{
     state = {
         bookSearched: '',
         booksList: [],
-        startindex: 0,
+        startIndex: 0,
         newbookSearch: '',
     }
 
@@ -19,11 +19,11 @@ class ScreensListagem extends Component{
         this.setState({bookSearched: bookSearched})
 
         if(bookSearched){
-            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startindex}&maxResults=21`)
+            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startIndex}&maxResults=21`)
             .then( response =>{
                 if(response.data.totalItems > 0){
                     this.setState({booksList: response.data.items})
-                    this.setState({startindex: this.state.startindex+14})
+                    this.setState({startIndex: this.state.startIndex+21})
                 }
             })
             .catch( error =>{
@@ -37,12 +37,14 @@ class ScreensListagem extends Component{
     }
 
     searchMore = () => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startindex}&maxResults=7`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startIndex}&maxResults=7`)
         .then( response =>{
             let books = this.state.booksList
+            console.log(response.data.totalItems, this.state.startIndex)
             if(response.data.totalItems > this.state.startIndex){
                 books = books.concat(response.data.items)
                 this.setState({booksList: books})
+                this.setState({startIndex: this.state.startIndex+7})
             }  
         })
         .catch( error =>{
