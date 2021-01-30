@@ -35,9 +35,9 @@ class DetalhesLivro extends Component{
         <div>
             <div className="details">
                 <div className="details-container">
-                    <div className="sub-details-container">
+                    <div className="image-container">
                         <img src={this.props.image==null ? NotFound:this.props.image} alt={this.props.title} className="book-image"/>
-                        <h2 className="sub-title">{this.props.pages==undefined ? 'Number of pages not found': this.props.pages+'pages'}</h2>
+                        <h2 className="sub-title">{this.props.pages==undefined ? 'Number of pages not found': this.props.pages+' pages'}</h2>
                     </div>
                     <div className="sub-details-container">
                         <h1 className="book-title">{this.props.title}</h1>
