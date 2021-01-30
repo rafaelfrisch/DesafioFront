@@ -62,7 +62,7 @@ class DetalhesLivro extends Component{
                             </div>
                         </div>
                         <div className="buy-favorite-buttons">
-                            <Button variant="contained" color="primary" className="buy-button" size="large">
+                            <Button variant="contained" color="primary" id="buy-button" size="large">
                                 Buy
                             </Button>
                             {favorite}

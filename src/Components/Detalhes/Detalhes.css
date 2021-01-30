@@ -12,10 +12,11 @@
 .details{
     background-color: #f9dd08;;
 }
-.buy-button{
+#buy-button{
     background-color: #549ae6;
     border-radius: 12px;
-    width: 200px;
+    width: 50%;
+    min-width: 120px;
 }
 .favorite-button{
     background-color:#e05568;
@@ -48,6 +49,8 @@
 }
 .description{
     font-size: 25px;
+    text-align: justify;
+    margin: 25px;
 }
 .stars{
     display: flex;

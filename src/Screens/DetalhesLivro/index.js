@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DetalhesLivro from '../../Components/Detalhes/Detalhes'
 import axios from 'axios';
-import HeaderListagem from '../../Components/Header/HeaderListagem';
+import Header from '../../Components/Header/HeaderListagem';
 
 class ScreensDetalhesLivro extends Component{
 
@@ -65,7 +65,7 @@ class ScreensDetalhesLivro extends Component{
     render(){
         return(
             <div>
-                <HeaderListagem search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={false} menuOrArrowClicked={this.ArrowClicked}/>
+                <Header search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={false} menuOrArrowClicked={this.ArrowClicked}/>
                 <DetalhesLivro 
                     title={this.state.title} authors={this.state.authors} description={this.state.description}
                     pages={this.state.pages} image={this.state.image} price={this.state.price} favorite={this.state.favorite}

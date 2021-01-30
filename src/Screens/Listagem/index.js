@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Listagem from '../../Components/Listagem/Listagem'
 import axios from 'axios';
-import HeaderListagem from '../../Components/Header/HeaderListagem';
+import Header from '../../Components/Header/HeaderListagem';
 import Button from '@material-ui/core/Button';
 import './styles.css'
 
@@ -65,7 +65,7 @@ class ScreensListagem extends Component{
     render(){
         return(
             <div>
-                <HeaderListagem search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={true} />
+                <Header search={this.state.bookSearched} changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={true} />
                 <div>
                     <Listagem search={this.state.bookSearched} books={this.state.booksList} searchMore={this.searchMore}/>
                     <div className="button-div">
