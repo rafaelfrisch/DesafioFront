@@ -4,6 +4,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Button from '@material-ui/core/Button';
 import Star from './Stars';
 import './Detalhes.css';
+import NotFound from '../../NotFound.png';
 
 class DetalhesLivro extends Component{
     state = {
@@ -35,7 +36,7 @@ class DetalhesLivro extends Component{
             <div className="details">
                 <div className="details-container">
                     <div className="sub-details-container">
-                        <img src={this.props.image} alt={this.props.title} className="book-image"/>
+                        <img src={this.props.image==null ? NotFound:this.props.image} alt={this.props.title} className="book-image"/>
                         <h2 className="sub-title">{this.props.pages} pages</h2>
                     </div>
                     <div className="sub-details-container">

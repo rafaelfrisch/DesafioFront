@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import NotFound from './NotFound.png';
+import NotFound from '../../NotFound.png';
 
 const CardLivro = (props) => {
     let history = useHistory();
