@@ -1,0 +1,13 @@
+#show-more-button{
+    background-color: #549ae6;
+    border-radius: 12px;
+    width: 30%;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+.button-div{
+    background-color: #f9dd08;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
