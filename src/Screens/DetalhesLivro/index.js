@@ -22,11 +22,11 @@ class ScreensDetalhesLivro extends Component{
         this.setState({bookSearched: bookSearched}) 
         axios.get(`https://www.googleapis.com/books/v1/volumes/${livroId}`)
         .then( response =>{
-            console.log(response.data.volumeInfo)
+
             let price = response.data.saleInfo.listPrice==undefined ? 9.99 : response.data.saleInfo.listPrice.amount.toFixed(2)
             let image = response.data.volumeInfo.imageLinks==undefined ? null : response.data.volumeInfo.imageLinks.thumbnail
             let description = response.data.volumeInfo.description==undefined ? 'Description not Found' : response.data.volumeInfo.description
-            let authors = response.data.volumeInfo.authors==undefined ? 'Author not found' : response.data.volumeInfo.authors[0]
+            let authors = response.data.volumeInfo.authors==undefined ? 'Author not found' : response.data.volumeInfo.authors
 
             this.setState({
                 title: response.data.volumeInfo.title,

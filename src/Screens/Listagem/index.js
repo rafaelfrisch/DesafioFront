@@ -17,13 +17,14 @@ class ScreensListagem extends Component{
     componentDidMount = () => {
         const bookSearched = this.props.match.params.search
         this.setState({bookSearched: bookSearched})
+
         if(bookSearched){
             axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startindex}&maxResults=21`)
             .then( response =>{
-                this.setState({booksList: response.data.items})
-                this.setState({startindex: this.state.startindex+14})
-                console.log(this.state.booksList)
-                console.log(this.state.startindex) 
+                if(response.data.totalItems > 0){
+                    this.setState({booksList: response.data.items})
+                    this.setState({startindex: this.state.startindex+14})
+                }
             })
             .catch( error =>{
                 console.log(error)
@@ -39,8 +40,10 @@ class ScreensListagem extends Component{
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startindex}&maxResults=7`)
         .then( response =>{
             let books = this.state.booksList
-            books = books.concat(response.data.items)
-            this.setState({booksList: books})
+            if(response.data.totalItems > this.state.startIndex){
+                books = books.concat(response.data.items)
+                this.setState({booksList: books})
+            }  
         })
         .catch( error =>{
             console.log(error)

@@ -41,7 +41,9 @@ class DetalhesLivro extends Component{
                     </div>
                     <div className="sub-details-container">
                         <h1 className="book-title">{this.props.title}</h1>
-                        <h2 className="sub-title">By {this.props.authors}</h2>
+                        <h2 className="sub-title">By {this.props.authors.map(
+                            (author, index)=>{return(this.props.authors.length==index+1 ? author: author+' and ')})}
+                        </h2>
                         <div className="price-rating-container">
                             <h1 className="price">$ {this.props.price}</h1>
                             <div className="flex-container-star">
