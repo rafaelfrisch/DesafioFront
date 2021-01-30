@@ -3,7 +3,7 @@ import Listagem from '../../Components/Listagem/Listagem'
 import axios from 'axios';
 import HeaderListagem from '../../Components/Header/HeaderListagem';
 import Button from '@material-ui/core/Button';
-import './Listagem.css'
+import './styles.css'
 
 class ScreensListagem extends Component{
 
@@ -18,10 +18,10 @@ class ScreensListagem extends Component{
         const bookSearched = this.props.match.params.search
         this.setState({bookSearched: bookSearched})
         if(bookSearched){
-            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startindex}`)
+            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startindex}&maxResults=21`)
             .then( response =>{
                 this.setState({booksList: response.data.items})
-                this.setState({startindex: this.state.startindex+10})
+                this.setState({startindex: this.state.startindex+14})
                 console.log(this.state.booksList)
                 console.log(this.state.startindex) 
             })
@@ -36,7 +36,7 @@ class ScreensListagem extends Component{
     }
 
     searchMore = () => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startindex}`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startindex}&maxResults=7`)
         .then( response =>{
             let books = this.state.booksList
             books = books.concat(response.data.items)
