@@ -18,7 +18,7 @@
     background-color: #549ae6;
     border-radius: 12px;
     width: 50%;
-    min-width: 120px;
+    min-width: 200px;
     max-width: 350px;
 }
 #favorite-button{
@@ -48,9 +48,10 @@
 .price-rating-container{
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 .price{
-    margin-right: 5%;
+    padding-right: 15px;
     font-size: 30px;
 }
 .description{
@@ -83,6 +84,7 @@
     }
     .price{
         font-size: 25px;
+        padding-right: 5%;
     }
     .details{
         padding-top: 70px;
@@ -104,12 +106,14 @@
     }
     .price{
         font-size: 15px;
+        padding-right: 5%;
     }
     .image-container{
         padding-right: 5%;
     }
     #buy-button{
         height: 30px;
+        min-width: 120px;
     }
     #favorite-button{
         height: 18px;
