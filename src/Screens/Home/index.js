@@ -17,10 +17,13 @@ class ScreensHome extends Component{
         this.props.history.push(`/listagem/${newSearch}`)
     }
 
+    componentDidMount = () =>{
+        document.body.style.backgroundColor = "#f9dd08"
+    }
 
     render(){
         return(
-            <div>
+            <div style={{backgroundColor: '#f9dd08'}}>
                 <Home changeSearch={this.InputSearch} submit={this.HandleInputSubmit}/>
             </div>
         )

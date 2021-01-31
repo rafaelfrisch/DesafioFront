@@ -17,6 +17,7 @@ class ScreensDetalhesLivro extends Component{
     }
 
     componentDidMount = () =>{
+        document.body.style.backgroundColor = "#ffffff"
         const livroId = this.props.match.params.livroId
         const bookSearched = this.props.match.params.search
         this.setState({bookSearched: bookSearched}) 

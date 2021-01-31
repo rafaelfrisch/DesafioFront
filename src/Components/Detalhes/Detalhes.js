@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Star from './Stars';
 import './Detalhes.css';
 import NotFound from '../../NotFound.png';
+import Box from '@material-ui/core/Box';
 
 class DetalhesLivro extends Component{
     state = {
@@ -33,6 +34,12 @@ class DetalhesLivro extends Component{
     
         return(
         <div>
+            
+            <Box
+                boxShadow={3}
+                bgcolor="#f9dd08"
+                p={1}
+            >
             <div className="details">
                 <div className="details-container">
                     <div className="image-container">
@@ -70,7 +77,7 @@ class DetalhesLivro extends Component{
                     </div>
                 </div>
             </div>
-            
+            </Box>
             <p className="description">{this.props.description}</p>
         </div>
         )

@@ -9,6 +9,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import './Header.css';
 import MenuComponent from './Menu';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,7 +75,14 @@ const SearchAppBar = (props) => {
 
     return (
         <div className={classes.root}>
-        
+        <Box
+            boxShadow={3}
+            bgcolor="#f9dd08"
+            
+            p={1}
+            m={0}
+            
+        >
         <AppBar position="static" style={{backgroundColor: "#f9dd08", color: 'black'}}>
             <Toolbar>
             <IconButton
@@ -108,6 +116,8 @@ const SearchAppBar = (props) => {
             </div>
             </Toolbar>
         </AppBar>
+        </Box>
+        
         </div>
     );
 }
