@@ -15,15 +15,16 @@ class ScreensListagem extends Component{
     }
 
     componentDidMount = () => {
+        document.body.style.backgroundColor = "#f9dd08"
         const bookSearched = this.props.match.params.search
         this.setState({bookSearched: bookSearched})
 
         if(bookSearched){
-            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startIndex}&maxResults=21`)
+            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearched}&startIndex=${this.state.startIndex}&maxResults=24`)
             .then( response =>{
                 if(response.data.totalItems > 0){
                     this.setState({booksList: response.data.items})
-                    this.setState({startIndex: this.state.startIndex+21})
+                    this.setState({startIndex: this.state.startIndex+24})
                 }
             })
             .catch( error =>{
@@ -37,14 +38,14 @@ class ScreensListagem extends Component{
     }
 
     searchMore = () => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startIndex}&maxResults=7`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.bookSearched}&startIndex=${this.state.startIndex}&maxResults=12`)
         .then( response =>{
             let books = this.state.booksList
             console.log(response.data.totalItems, this.state.startIndex)
             if(response.data.totalItems > this.state.startIndex){
                 books = books.concat(response.data.items)
                 this.setState({booksList: books})
-                this.setState({startIndex: this.state.startIndex+7})
+                this.setState({startIndex: this.state.startIndex+12})
             }  
         })
         .catch( error =>{

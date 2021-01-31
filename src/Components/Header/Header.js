@@ -14,6 +14,7 @@ import Box from '@material-ui/core/Box';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: "#f9dd08",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -74,14 +75,11 @@ const SearchAppBar = (props) => {
         menu = <MenuComponent/>
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} >
         <Box
-            boxShadow={3}
-            bgcolor="#f9dd08"
-            
+            boxShadow={0}
             p={1}
             m={0}
-            
         >
         <AppBar position="static" style={{backgroundColor: "#f9dd08", color: 'black'}}>
             <Toolbar>
