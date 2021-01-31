@@ -7,16 +7,3 @@
     padding: 0 100px;
     background-color: #f9dd08;
 }
-
-.searched-book{
-    font-family: sans-serif;
-    font-size: 30px;
-    font-weight: 300;
-}
-.hr-line{
-    color: red;
-}
-.home-icon{
-    height: 20px;
-    cursor: pointer;
-}

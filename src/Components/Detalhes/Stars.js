@@ -4,7 +4,6 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import './Detalhes.css';
 import {  makeStyles } from '@material-ui/core/styles';
 
-
 const useStyles = makeStyles(theme => ({
     root: {
         [theme.breakpoints.down('sm')]: {
@@ -18,8 +17,6 @@ const useStyles = makeStyles(theme => ({
         },
     },
 }))
-
-
 
 const Star = (props) => {
     const classes = useStyles();

@@ -62,7 +62,6 @@ class ScreensListagem extends Component{
         this.props.history.push(`/listagem/${newSearch}`)
     }
 
-
     render(){
         return(
             <div>

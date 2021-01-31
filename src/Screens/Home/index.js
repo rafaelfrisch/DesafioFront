@@ -7,7 +7,6 @@ class ScreensHome extends Component{
         bookSearch: '',
     }
 
-
     InputSearch = (event) => {
         this.setState({bookSearch: event.target.value})
     }

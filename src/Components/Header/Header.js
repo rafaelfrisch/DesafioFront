@@ -115,7 +115,6 @@ const SearchAppBar = (props) => {
             </Toolbar>
         </AppBar>
         </Box>
-        
         </div>
     );
 }
