@@ -12,5 +12,23 @@
 }
 .image{
     height: 250px;
-    max-width: 180px;
+    width: 180px;
+}
+@media (max-width: 960px) {
+    .container{
+        row-gap: 70px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+    .image{
+        height: 150px;
+        width: 110px;
+    }
+    .container{
+        row-gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
 }

@@ -86,7 +86,7 @@ const SearchAppBar = (props) => {
             >
                 {menu}
             </IconButton>
-            <Typography className={classes.title} variant="h5" noWrap>
+            <Typography className={classes.title} variant="h6" noWrap>
                 {props.search}
             </Typography>
             <div className={classes.search}>
