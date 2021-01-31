@@ -26,10 +26,10 @@ class DetalhesLivro extends Component{
 
     render(){
         
-    let favorite = <FavoriteBorderIcon className="favorite-button" onClick={this.props.AddFavorite}/>;
+    let favorite = <FavoriteBorderIcon id="favorite-button" onClick={this.props.AddFavorite}/>;
     
     if (this.props.favorite)
-        favorite = <FavoriteIcon className="favorite-button" onClick={this.props.AddFavorite}/>
+        favorite = <FavoriteIcon id="favorite-button" onClick={this.props.AddFavorite}/>
     
         return(
         <div>
