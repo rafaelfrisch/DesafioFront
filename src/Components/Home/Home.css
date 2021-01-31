@@ -1,0 +1,21 @@
+body{
+    height: 100%;
+    background-color: #f9dd08;
+}
+.home-container{
+    width: 100%;
+}
+.home-title{
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    color: #252101;
+    padding: 30px;
+    font-size: 36px;
+}
+@media (max-width: 600px) {
+    .home-title{
+        margin-top: 150px;
+        font-size: 32px;
+    }
+}

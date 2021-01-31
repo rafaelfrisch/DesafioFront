@@ -1,38 +1,27 @@
 import React, { Component } from 'react';
-import Home from '../../Components/Home/Home'
-import Header from '../../Components/Header/Header';
+import Home from '../../Components/Home/Home';
 
 class ScreensHome extends Component{
 
     state = {
-        booksearch: '',
-        newbookSearch: '',
+        bookSearch: '',
     }
 
 
     InputSearch = (event) => {
-        this.setState({booksearch: event.target.value})
+        this.setState({bookSearch: event.target.value})
     }
 
-    SearchBook = () => {
-        let queryString = this.state.booksearch
-        this.props.history.push(`/listagem/${queryString}`)
-    }
-
-    ChangeSearch = (event) => {
-        this.setState({newbookSearch: event.target.value})
-    }
-
-    HandleSubmit = (event) =>{
-        const newSearch = this.state.newbookSearch
+    HandleInputSubmit = (event) =>{
+        const newSearch = this.state.bookSearch
         this.props.history.push(`/listagem/${newSearch}`)
     }
+
 
     render(){
         return(
             <div>
-                <Header changeSearch={this.ChangeSearch} submit={this.HandleSubmit} showmenu={true} />
-                <Home SearchBook={this.SearchBook} InputSearch={this.InputSearch}/>
+                <Home changeSearch={this.InputSearch} submit={this.HandleInputSubmit}/>
             </div>
         )
     }
