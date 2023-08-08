@@ -13,7 +13,7 @@ const CardLivro = (props) => {
 
     let image;
 
-    if (props.volumeInfo.imageLinks == undefined)
+    if (props.volumeInfo.imageLinks === undefined)
         image = <img src={NotFound} alt={props.volumeInfo.title} onClick={() => {BookDetailsRedirect(props.id)}} className="image"/>
     else
         image = <img src={props.volumeInfo.imageLinks.thumbnail} alt={props.volumeInfo.title} onClick={() => {BookDetailsRedirect(props.id)}} className="image"/>
