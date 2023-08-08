@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/DesafioFront/static/css/main.6efde49f.chunk.css",
-    "main.js": "/DesafioFront/static/js/main.5150aa1b.chunk.js",
-    "main.js.map": "/DesafioFront/static/js/main.5150aa1b.chunk.js.map",
+    "main.js": "/DesafioFront/static/js/main.4b8db887.chunk.js",
+    "main.js.map": "/DesafioFront/static/js/main.4b8db887.chunk.js.map",
     "runtime-main.js": "/DesafioFront/static/js/runtime-main.3a24289f.js",
     "runtime-main.js.map": "/DesafioFront/static/js/runtime-main.3a24289f.js.map",
     "static/css/2.814ea8e2.chunk.css": "/DesafioFront/static/css/2.814ea8e2.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.814ea8e2.chunk.css",
     "static/js/2.59d842e4.chunk.js",
     "static/css/main.6efde49f.chunk.css",
-    "static/js/main.5150aa1b.chunk.js"
+    "static/js/main.4b8db887.chunk.js"
   ]
 }
