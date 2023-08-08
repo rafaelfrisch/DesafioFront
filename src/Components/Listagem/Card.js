@@ -6,8 +6,6 @@ const CardLivro = (props) => {
     let history = useHistory();
 
     const BookDetailsRedirect = (idLivro) => {
-        console.log(idLivro)
-        console.log(typeof(idLivro))
         history.push(`/livros/${props.search}/${idLivro}`)
     }
 
